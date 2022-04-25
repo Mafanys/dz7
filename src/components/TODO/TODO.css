@@ -1,0 +1,29 @@
+.toDo{
+    width: 400px;
+    min-height: 300px;
+    border: 2px solid black;
+    margin: auto;
+    background-color: antiquewhite;
+    border-radius: 25px;
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    padding: 0px;
+}
+.header{    
+    color: rgb(68, 0, 255);
+}
+.list{
+    width: 100%;
+}
+.submitInput{
+    width: 250px;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding-left: 10px;
+    
+}
+
