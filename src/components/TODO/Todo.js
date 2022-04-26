@@ -10,12 +10,12 @@ class Todo extends React.Component{
     constructor(props){
         super(props);
         this.handelAdd = this.handelAdd.bind(this);
-        this.handelDel = this.handelDel.bind(this);
+        this.handelDel = this.handelDel.bind(this); 
     }
 
     state = {
         list: [],
-        value: ''
+        value: ''        
     }
 
     handelAdd(todo){
@@ -28,12 +28,13 @@ class Todo extends React.Component{
             list: this.state.list.filter(item => item.id !== id) 
         })
     }
+    
 render(){
     return(
         <div className="toDo">
             <Header count = {this.state.list.length} />
             <SubmitForm handelAdd={this.handelAdd} />
-            <List list = {this.state.list} onDelete={this.handelDel} />            
+            <List list = {this.state.list}  onDelete={this.handelDel}/>            
         </div>
         
     )

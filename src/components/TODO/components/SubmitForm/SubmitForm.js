@@ -25,7 +25,8 @@ class SubmitForm extends React.Component{
     if(this.state.value){
         this.props.handelAdd({
             id: v4(),
-            value: this.state.value
+            value: this.state.value,
+            
         })
 
         this.setState({
@@ -39,7 +40,7 @@ class SubmitForm extends React.Component{
             <form className="submit">
                 <input className="submitInput" type="text" value={this.state.value} onChange={this.handelChange.bind(this)}></input>                
                 <Button variant="contained" size="small" endIcon={<SendIcon />} onClick={this.handelClickAdd.bind(this)}>
-                    Send
+                    Add todo
                 </Button>
             </form>
         )

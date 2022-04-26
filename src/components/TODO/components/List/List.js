@@ -1,26 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import React from "react";
-import { Checkbox} from "@mui/material";
 import styles from './style.module.css';
 import clsx from "clsx";
 
 
 
 class List extends React.Component{
-    constructor(){
+     constructor(){
         super();
-        this.Chek = this.Chek.bind(this);
+        this.chek = this.chek.bind(this);
     }
-    state = {
+     state = {
         check: false
     }
     
-    Chek(){
-       
-        if(this.state.check === false){
+     chek(){        
+        /* if(this.state.check === false){
             this.setState({
                 check: true
+                
             })
             
             console.log("true");
@@ -29,22 +28,24 @@ class List extends React.Component{
                 check: false
             })
             console.log("false");
-        }
-    }
+        } */
+        this.setState({ check: !this.state.check })
+    }  
     render(){
         return(
             <ul className="list">
                 {this.props.list.map(item =>{
                     const {id,value} = item;
                     return(
-                        <li key={id} className={clsx(`${styles.noCheck}`, this.state.check && `${styles.check}`)}>   
+                        
+                        <li key={id} className={clsx(`${styles.noCheck}`, this.state.check && `${styles.check}`)}> 
+                           
                             {value}
-                            <div>
-                                <Checkbox  color="success" onChange={this.Chek} /> 
+                            <div>                                
+                                <input type="checkbox" checked={this.state.check} onChange={this.chek}/>
                                 <button onClick={() => this.props.onDelete(id)}>
                                     <FontAwesomeIcon icon={faTrash}/>
-                                </button>
-                                
+                                </button>                                
                             </div>                         
                                                    
                         </li>
